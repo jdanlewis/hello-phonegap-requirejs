@@ -1,0 +1,19 @@
+body {
+	padding-top: 55px;
+	background-color:#fff;
+	background-image:linear-gradient(top, #fff 0%, #f0f0f0 51%);
+	background-image:-webkit-linear-gradient(top, #fff 0%, #f0f0f0 51%);
+	background-image:-ms-linear-gradient(top, #fff 0%, #f0f0f0 51%);
+	background-image:-webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #fff),
+		color-stop(0.51, #f0f0f0)
+	);
+	background-attachment:fixed;
+}
+
+#hello {
+	text-align: center;
+}
