@@ -1,7 +1,7 @@
 # Hello, Phonegap
 
 This is an example project demonstrating Phonegap 3.0.0 integration with
-RequireJS, Bootstrap 3.0, and HTML5 local storage for persistent data.
+RequireJS, Bootstrap 3.0, JQuery 2.0, and HTML5 local storage.
 
 ## Pre-requisites
 
