@@ -2,10 +2,8 @@
 define(['jquery', 'app/db', 'app/hello'],
 	function ($, db, hello) {
 
-		var checkCordova, startup;
-
 		// Start the app when the device is ready
-		startup = function() {
+		var startup = function() {
 			// Wait for document ready
 			$(function() {
 				db.startup();
@@ -14,22 +12,19 @@ define(['jquery', 'app/db', 'app/hello'],
 			});
 		};
 
-		// Check for Phonegap (Cordova) to avoid race conditions
-		// with the deviceready event
-		checkCordova = function checkCordova() {
+		// Poll for Phonegap (Cordova) to avoid race conditions
+		// with the deviceready event. For local development,
+		// startup may need to be called directly.
+		(function checkCordova() {
 			// Check if Cordova exists
-			if (window.cordova && window.cordova.exec) {
+			if (window.cordova) {
 				// Listen for the deviceready event
 				document.addEventListener('deviceready', startup, false);
 			} else {
-				// If Cordova does not exist, check again in 16ms
+				// If Cordova does not exist, check again in 1/60th second
 				setTimeout(checkCordova, 16);
 			}
-		};
+		}());
 
-		// Poll for Phonegap.
-		// For local development, startup may need to be called directly
-		// since the deviceready event does not exist.
-		checkCordova();
 	}
 );
