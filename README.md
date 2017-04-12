@@ -1,3 +1,5 @@
+# This project is no longer maintained.
+
 # Hello, Phonegap
 
 This is an example project demonstrating Phonegap 3.0.0 integration with
